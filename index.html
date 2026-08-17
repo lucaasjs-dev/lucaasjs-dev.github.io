@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portf&oacute;lio acad&ecirc;mico de Lucas Jesus Cust&oacute;dio Silva, estudante de Engenharia de Software e profissional de processos, projetos e produtos.">
+  <title>Lucas Jesus | Portf&oacute;lio</title>
+  <style>
+    :root {
+      --navy: #0b1f33;
+      --navy-soft: #173853;
+      --blue: #176b87;
+      --cyan: #64ccc5;
+      --cream: #f4f7f8;
+      --white: #ffffff;
+      --ink: #15212b;
+      --muted: #61717d;
+      --line: #dce5e9;
+      --shadow: 0 18px 45px rgba(11, 31, 51, .10);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--cream);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
+    }
+    a { color: inherit; }
+    .container { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid rgba(255,255,255,.12);
+      background: rgba(11,31,51,.94);
+      backdrop-filter: blur(14px);
+    }
+    .nav-inner { min-height: 70px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { color: var(--white); text-decoration: none; font-weight: 800; letter-spacing: -.02em; }
+    .brand span { color: var(--cyan); }
+    .menu { display: flex; flex-wrap: wrap; gap: 22px; }
+    .menu a { color: #d9e7ec; text-decoration: none; font-size: .92rem; font-weight: 650; }
+    .menu a:hover { color: var(--cyan); }
+    .hero {
+      overflow: hidden;
+      position: relative;
+      color: var(--white);
+      background:
+        radial-gradient(circle at 85% 20%, rgba(100,204,197,.24), transparent 28%),
+        linear-gradient(125deg, var(--navy) 0%, #102e47 56%, #176b87 140%);
+      padding: 95px 0 88px;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 320px;
+      height: 320px;
+      right: -130px;
+      bottom: -170px;
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 50%;
+    }
+    .hero-grid { display: grid; grid-template-columns: 1.35fr .65fr; gap: 70px; align-items: center; }
+    .eyebrow { margin: 0 0 13px; color: var(--cyan); font-size: .78rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+    h1 { max-width: 760px; margin: 0; font-size: clamp(2.6rem, 7vw, 5.1rem); line-height: 1.02; letter-spacing: -.055em; }
+    .lead { max-width: 700px; margin: 25px 0 0; color: #d8e5eb; font-size: clamp(1.02rem, 2vw, 1.24rem); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 13px; margin-top: 33px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 21px; border: 1px solid transparent; border-radius: 8px; text-decoration: none; font-weight: 750; transition: .2s ease; }
+    .button-primary { color: var(--navy); background: var(--cyan); }
+    .button-primary:hover { background: #8ae0da; transform: translateY(-2px); }
+    .button-ghost { color: var(--white); border-color: rgba(255,255,255,.32); }
+    .button-ghost:hover { border-color: var(--cyan); color: var(--cyan); }
+    .monogram { width: min(280px, 70vw); aspect-ratio: 1; margin-inline: auto; display: grid; place-items: center; border: 1px solid rgba(255,255,255,.2); border-radius: 28px; color: var(--cyan); background: rgba(255,255,255,.06); box-shadow: 0 25px 80px rgba(0,0,0,.25); font-size: clamp(4.5rem, 10vw, 7rem); font-weight: 850; letter-spacing: -.1em; transform: rotate(3deg); }
+    section { padding: 88px 0; }
+    .section-head { display: grid; grid-template-columns: .7fr 1.3fr; gap: 45px; align-items: end; margin-bottom: 42px; }
+    .section-head h2 { margin: 0; color: var(--navy); font-size: clamp(2rem, 4vw, 3rem); line-height: 1.12; letter-spacing: -.035em; }
+    .section-head p { margin: 0; color: var(--muted); }
+    .about-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 25px; }
+    .panel { padding: 34px; border: 1px solid var(--line); border-radius: 16px; background: var(--white); box-shadow: var(--shadow); }
+    .panel h3 { margin-top: 0; color: var(--navy); }
+    .facts { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; }
+    .fact { padding: 18px; border-radius: 12px; background: #edf5f6; }
+    .fact strong { display: block; color: var(--blue); font-size: 1.12rem; }
+    .fact span { color: var(--muted); font-size: .9rem; }
+    .projects { background: #eaf0f2; }
+    .project-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .project { display: flex; flex-direction: column; min-height: 100%; padding: 29px; border: 1px solid var(--line); border-top: 4px solid var(--cyan); border-radius: 14px; background: var(--white); box-shadow: var(--shadow); }
+    .tag { align-self: flex-start; padding: 5px 10px; border-radius: 999px; color: var(--blue); background: #e5f3f2; font-size: .74rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
+    .project h3 { margin: 20px 0 10px; color: var(--navy); font-size: 1.35rem; line-height: 1.25; }
+    .project p { margin: 0; color: var(--muted); }
+    .project ul { margin: 20px 0 0; padding-left: 19px; color: var(--ink); }
+    .project li + li { margin-top: 6px; }
+    .project-meta { margin-top: auto; padding-top: 24px; color: var(--blue); font-size: .86rem; font-weight: 750; }
+    .skills-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .skill-group { padding: 27px; border-left: 3px solid var(--cyan); background: var(--white); box-shadow: var(--shadow); }
+    .skill-group h3 { margin: 0 0 14px; color: var(--navy); }
+    .chips { display: flex; flex-wrap: wrap; gap: 9px; }
+    .chip { padding: 7px 11px; border: 1px solid var(--line); border-radius: 7px; color: var(--muted); background: #fbfcfc; font-size: .88rem; }
+    .education { color: var(--white); background: var(--navy); }
+    .education .section-head h2 { color: var(--white); }
+    .education .section-head p { color: #bfd0d8; }
+    .timeline { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .course { padding: 25px; border: 1px solid rgba(255,255,255,.14); border-radius: 12px; background: rgba(255,255,255,.055); }
+    .course span { color: var(--cyan); font-size: .79rem; font-weight: 800; text-transform: uppercase; letter-spacing: .09em; }
+    .course h3 { margin: 9px 0 4px; font-size: 1.12rem; }
+    .course p { margin: 0; color: #bfd0d8; }
+    .contact-card { display: grid; grid-template-columns: 1.3fr .7fr; gap: 30px; align-items: center; padding: 42px; border-radius: 18px; color: var(--white); background: linear-gradient(120deg, var(--blue), #11506a); box-shadow: var(--shadow); }
+    .contact-card h2 { margin: 0 0 8px; font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -.035em; }
+    .contact-card p { margin: 0; color: #d8edf0; }
+    .contact-links { display: grid; gap: 10px; }
+    .contact-links a { padding: 12px 15px; border: 1px solid rgba(255,255,255,.24); border-radius: 8px; text-align: center; text-decoration: none; font-weight: 750; }
+    .contact-links a:hover { border-color: var(--cyan); color: var(--cyan); }
+    footer { padding: 28px 0; color: var(--muted); text-align: center; font-size: .88rem; }
+    @media (max-width: 850px) {
+      .hero-grid, .section-head, .about-grid, .contact-card { grid-template-columns: 1fr; }
+      .project-grid { grid-template-columns: 1fr; }
+      .hero { padding-top: 70px; }
+      .monogram { width: 210px; }
+      .section-head { gap: 14px; }
+    }
+    @media (max-width: 620px) {
+      .container { width: min(100% - 26px, 1120px); }
+      .nav-inner { align-items: flex-start; flex-direction: column; padding: 15px 0; }
+      .menu { gap: 13px; }
+      section { padding: 64px 0; }
+      .facts, .skills-grid, .timeline { grid-template-columns: 1fr; }
+      .panel, .contact-card { padding: 26px; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav" aria-label="Navega&ccedil;&atilde;o principal">
+    <div class="container nav-inner">
+      <a class="brand" href="#inicio">Lucas<span>.</span></a>
+      <div class="menu">
+        <a href="#sobre">Sobre</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#habilidades">Habilidades</a>
+        <a href="#formacao">Forma&ccedil;&atilde;o</a>
+        <a href="#contato">Contato</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="inicio">
+    <div class="container hero-grid">
+      <div>
+        <p class="eyebrow">Portf&oacute;lio acad&ecirc;mico &middot; Engenharia de Software</p>
+        <h1>Lucas Jesus Cust&oacute;dio Silva</h1>
+        <p class="lead">Processos, projetos, produtos e tecnologia conectados para transformar problemas de neg&oacute;cio em solu&ccedil;&otilde;es digitais bem estruturadas.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#projetos">Conhecer projetos</a>
+          <a class="button button-ghost" href="https://www.linkedin.com/in/lucaasjs/" target="_blank" rel="noopener">Acessar LinkedIn</a>
+        </div>
+      </div>
+      <div class="monogram" aria-label="Iniciais de Lucas Cust&oacute;dio">LC</div>
+    </div>
+  </header>
+
+  <main>
+    <section id="sobre">
+      <div class="container">
+        <div class="section-head">
+          <div><p class="eyebrow">Perfil</p><h2>Sobre mim</h2></div>
+          <p>Minha trajet&oacute;ria une experi&ecirc;ncia em neg&oacute;cios e gest&atilde;o com uma forma&ccedil;&atilde;o cada vez mais orientada &agrave; tecnologia. Gosto de entender o problema por inteiro, organizar o processo e acompanhar a solu&ccedil;&atilde;o at&eacute; a entrega.</p>
+        </div>
+        <div class="about-grid">
+          <article class="panel">
+            <h3>Dire&ccedil;&atilde;o profissional</h3>
+            <p>Atuo com negocia&ccedil;&atilde;o, planejamento e acompanhamento de projetos, conectando necessidades do neg&oacute;cio, pessoas e execu&ccedil;&atilde;o. Meu objetivo &eacute; evoluir para a ger&ecirc;ncia de processos e, no longo prazo, assumir responsabilidades de dire&ccedil;&atilde;o.</p>
+            <p>Na Engenharia de Software, busco ampliar minha capacidade de especificar produtos, modelar regras de neg&oacute;cio e colaborar com equipes de desenvolvimento.</p>
+          </article>
+          <div class="panel facts">
+            <div class="fact"><strong>Processos</strong><span>Mapeamento e melhoria cont&iacute;nua</span></div>
+            <div class="fact"><strong>Projetos</strong><span>Planejamento e acompanhamento</span></div>
+            <div class="fact"><strong>Produtos</strong><span>Requisitos e prioriza&ccedil;&atilde;o</span></div>
+            <div class="fact"><strong>Neg&oacute;cios</strong><span>Negocia&ccedil;&atilde;o e resultados</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects" id="projetos">
+      <div class="container">
+        <div class="section-head">
+          <div><p class="eyebrow">Pr&aacute;tica</p><h2>Projetos</h2></div>
+          <p>Cen&aacute;rios de projeto que aplicam conceitos de processos, requisitos, dados e experi&ecirc;ncia do usu&aacute;rio a desafios comuns das organiza&ccedil;&otilde;es.</p>
+        </div>
+        <div class="project-grid">
+          <article class="project" id="orcamento-offline">
+            <span class="tag">Arquitetura de software</span>
+            <h3>Or&ccedil;amento Mobile Offline</h3>
+            <p>Solu&ccedil;&atilde;o para criar e assinar or&ccedil;amentos no celular mesmo sem conex&atilde;o, mantendo a integridade da numera&ccedil;&atilde;o quando os dados retornam &agrave; base central.</p>
+            <ul>
+              <li>Identificador local &uacute;nico para cada registro</li>
+              <li>Fila de sincroniza&ccedil;&atilde;o com controle de estado</li>
+              <li>N&uacute;mero oficial atribu&iacute;do pelo servidor</li>
+              <li>Rastreabilidade entre cria&ccedil;&atilde;o e confirma&ccedil;&atilde;o</li>
+            </ul>
+            <div class="project-meta">Regras de neg&oacute;cio &middot; Dados &middot; UX offline</div>
+          </article>
+
+          <article class="project" id="painel-indicadores">
+            <span class="tag">Business Intelligence</span>
+            <h3>Painel de Indicadores Operacionais</h3>
+            <p>Estrutura de acompanhamento para dar visibilidade &agrave; opera&ccedil;&atilde;o e apoiar decis&otilde;es de capacidade, prioridade e melhoria de desempenho.</p>
+            <ul>
+              <li>Volume recebido e conclu&iacute;do por per&iacute;odo</li>
+              <li>Tempo m&eacute;dio e cumprimento de prazo</li>
+              <li>Identifica&ccedil;&atilde;o de filas e gargalos</li>
+              <li>Vis&otilde;es executiva e operacional</li>
+            </ul>
+            <div class="project-meta">KPIs &middot; BI &middot; Tomada de decis&atilde;o</div>
+          </article>
+
+          <article class="project" id="processo-atendimento">
+            <span class="tag">Gest&atilde;o de processos</span>
+            <h3>Redesenho de Processo de Atendimento</h3>
+            <p>Mapeamento ponta a ponta de uma jornada de atendimento, da entrada da solicita&ccedil;&atilde;o ao encerramento, com proposta de fluxo futuro padronizado.</p>
+            <ul>
+              <li>Levantamento do processo atual (AS-IS)</li>
+              <li>An&aacute;lise de falhas, esperas e retrabalho</li>
+              <li>Defini&ccedil;&atilde;o do processo futuro (TO-BE)</li>
+              <li>Indicadores e responsabilidades por etapa</li>
+            </ul>
+            <div class="project-meta">BPM &middot; Requisitos &middot; Melhoria cont&iacute;nua</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="habilidades">
+      <div class="container">
+        <div class="section-head">
+          <div><p class="eyebrow">Compet&ecirc;ncias</p><h2>Habilidades</h2></div>
+          <p>Conhecimentos desenvolvidos na experi&ecirc;ncia profissional e aprofundados por meio da forma&ccedil;&atilde;o em gest&atilde;o e tecnologia.</p>
+        </div>
+        <div class="skills-grid">
+          <div class="skill-group"><h3>Gest&atilde;o e neg&oacute;cios</h3><div class="chips"><span class="chip">Negocia&ccedil;&atilde;o</span><span class="chip">Planejamento</span><span class="chip">Indicadores</span><span class="chip">Lideran&ccedil;a</span><span class="chip">Gest&atilde;o de projetos</span><span class="chip">Metodologias &aacute;geis</span></div></div>
+          <div class="skill-group"><h3>Processos e produtos</h3><div class="chips"><span class="chip">BPM</span><span class="chip">AS-IS / TO-BE</span><span class="chip">Regras de neg&oacute;cio</span><span class="chip">Requisitos</span><span class="chip">Priorizac&atilde;o</span><span class="chip">Melhoria cont&iacute;nua</span></div></div>
+          <div class="skill-group"><h3>Tecnologia</h3><div class="chips"><span class="chip">Git</span><span class="chip">GitHub</span><span class="chip">L&oacute;gica de programa&ccedil;&atilde;o</span><span class="chip">Banco de dados</span><span class="chip">HTML e CSS</span><span class="chip">Modelagem de dados</span></div></div>
+          <div class="skill-group"><h3>An&aacute;lise</h3><div class="chips"><span class="chip">Business Intelligence</span><span class="chip">KPIs</span><span class="chip">Documenta&ccedil;&atilde;o</span><span class="chip">Resolu&ccedil;&atilde;o de problemas</span><span class="chip">Vis&atilde;o sist&ecirc;mica</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="education" id="formacao">
+      <div class="container">
+        <div class="section-head">
+          <div><p class="eyebrow">Aprendizado</p><h2>Forma&ccedil;&atilde;o</h2></div>
+          <p>Uma base multidisciplinar que conecta engenharia, gest&atilde;o, processos e lideran&ccedil;a.</p>
+        </div>
+        <div class="timeline">
+          <article class="course"><span>Em andamento</span><h3>Bacharelado em Engenharia de Software</h3><p>UNICID &mdash; Universidade Cidade de S&atilde;o Paulo</p></article>
+          <article class="course"><span>Em andamento</span><h3>MBA em Gest&atilde;o de Projetos e Metodologias &Aacute;geis</h3><p>PUCRS</p></article>
+          <article class="course"><span>Conclu&iacute;do em 2026</span><h3>Tecnologia em Processos Gerenciais</h3><p>Universidade Metodista de S&atilde;o Paulo</p></article>
+          <article class="course"><span>Conclu&iacute;do em 2016</span><h3>T&eacute;cnico em Automa&ccedil;&atilde;o Industrial</h3><p>Forma&ccedil;&atilde;o t&eacute;cnica &middot; 1.200 horas</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato">
+      <div class="container contact-card">
+        <div><p class="eyebrow">Contato</p><h2>Vamos conversar?</h2><p>Estou aberto a conex&otilde;es profissionais, troca de conhecimento e oportunidades relacionadas a processos, projetos, produtos e tecnologia.</p></div>
+        <div class="contact-links">
+          <a href="mailto:lucaas.js@gmail.com">Enviar e-mail</a>
+          <a href="https://www.linkedin.com/in/lucaasjs/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/lucaasjs-dev" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">&copy; 2026 Lucas Jesus Cust&oacute;dio Silva &middot; Portf&oacute;lio acad&ecirc;mico</div>
+  </footer>
+</body>
+</html>
