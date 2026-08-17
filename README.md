@@ -20,7 +20,7 @@ Sou um profissional com experiência em negócios, projetos, produtos e melhoria
 
 | Projeto | Descrição | Competências aplicadas |
 |---|---|---|
-| [Orçamento Mobile Offline](https://lucaasjs-dev.github.io/#orcamento-offline) | Arquitetura para emissão de orçamentos sem internet, com sincronização e tratamento de conflitos de numeração. | Regras de negócio, modelagem de dados e experiência offline |
+| [Sistema Completo de Gestão de Estoque](https://lucaasjs-dev.github.io/#gestao-estoque) | Plataforma para controlar entradas, saídas, transferências, inventários, níveis mínimos e rastreabilidade das movimentações. | Regras de negócio, modelagem de dados e indicadores |
 | [Painel de Indicadores Operacionais](https://lucaasjs-dev.github.io/#painel-indicadores) | Proposta de painel para acompanhar prazos, produtividade, volume de trabalho e gargalos. | Business Intelligence, indicadores e tomada de decisão |
 | [Redesenho de Processo de Atendimento](https://lucaasjs-dev.github.io/#processo-atendimento) | Mapeamento do fluxo atual e desenho de um processo futuro mais padronizado e rastreável. | BPM, requisitos, melhoria contínua e gestão de processos |
 
