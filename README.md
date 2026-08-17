@@ -6,15 +6,15 @@ Bem-vindo ao meu portfólio acadêmico de Engenharia de Software.
 
 ## Apresentação
 
-Sou um profissional com experiência em negócios, projetos, produtos e melhoria de processos. Minha trajetória combina visão de gestão com formação tecnológica, buscando transformar necessidades de negócio em soluções digitais organizadas, eficientes e mensuráveis.
+Sou Gerente de Processos, com experiência em negócios, projetos, produtos e melhoria de processos. Minha trajetória combina visão de gestão com formação tecnológica, buscando transformar necessidades de negócio em soluções digitais organizadas, eficientes e mensuráveis.
 
 ## Sobre mim
 
+- Gerente de Processos, com atuação em negociação, planejamento e acompanhamento de projetos.
 - Graduando em Engenharia de Software.
 - Tecnólogo em Processos Gerenciais.
-- Experiência com negociação, planejamento e acompanhamento de projetos.
-- Interesse em gestão de processos, produtos digitais e liderança.
-- Objetivo profissional: evoluir para posições de gerência de processos e direção.
+- Experiência em gestão de produtos digitais e liderança.
+- Objetivo profissional: consolidar minha atuação executiva e evoluir para posições de direção.
 
 ## Projetos
 
